@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PhoneStoreApp
 //
-//  Created by Macbook on 12.12.2022.
+//  Created by i0240 on 12.12.2022.
 //
 
 import UIKit

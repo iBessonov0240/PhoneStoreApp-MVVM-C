@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  PhoneStoreApp
 //
-//  Created by Macbook on 12.12.2022.
+//  Created by i0240 on 12.12.2022.
 //
 
 import UIKit
@@ -10,12 +10,17 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        window = self.window ?? UIWindow()
+        appCoordinator = AppCoordinator(window: window!)
+        window?.backgroundColor = .white
+        appCoordinator?.start()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
