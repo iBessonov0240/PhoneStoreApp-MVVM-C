@@ -9,6 +9,18 @@ import UIKit
 
 class BasketView: UIView {
     
+    private var basketModel: [BasketItem] = []
+    private var delModel: [DeliveryItem] = []
+    
+    private lazy var feedTableView: UITableView = .create(style: .plain) {
+        $0.register(BasketCell.self)
+//        $0.dataSource = self
+//        $0.delegate = self
+        $0.allowsSelection = true
+        $0.isUserInteractionEnabled = true
+        $0.showsVerticalScrollIndicator = false
+        $0.isPrefetchingEnabled = true
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

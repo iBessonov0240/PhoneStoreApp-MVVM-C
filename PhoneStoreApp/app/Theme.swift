@@ -22,6 +22,7 @@ struct Theme {
     static var appGrayColor: UIColor = UIColor(hexString: "#CCCCCC")!
     static var appDarkGrayColor: UIColor = UIColor(hexString: "#8D8D8D")!
     static var appBrownColor: UIColor = UIColor(hexString: "#772D03")!
+    static var appBasketHalfVizorColor: UIColor = UIColor(hexString: "#282843")!
     
     static func textFieldStyle(_ textField: UITextField,
                                     ofSize: CGFloat = 15,

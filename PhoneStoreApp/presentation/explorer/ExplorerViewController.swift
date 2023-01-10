@@ -122,7 +122,6 @@ class ExplorerViewController: UIViewController {
         $0.text = "Best Sellers"
         $0.textAlignment = .center
         Theme.labelStyle($0, ofSize: 25, weight: .bold)
-        $0.textColor = Theme.appDarkBlueColor
     }
     
     private lazy var seeSellersButton: UIButton = .create {

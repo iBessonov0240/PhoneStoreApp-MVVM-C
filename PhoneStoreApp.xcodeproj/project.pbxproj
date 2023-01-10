@@ -75,6 +75,10 @@
 		FA6A49F5296C6A0D009F3D0B /* BasketRoutingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F4296C6A0D009F3D0B /* BasketRoutingDelegate.swift */; };
 		FA6A49F7296C6A52009F3D0B /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F6296C6A52009F3D0B /* BasketCoordinator.swift */; };
 		FA6A49FA296C789F009F3D0B /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F9296C789F009F3D0B /* BasketView.swift */; };
+		FA6A49FD296D4B9A009F3D0B /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49FC296D4B9A009F3D0B /* BasketItem.swift */; };
+		FA6A4A00296D553B009F3D0B /* DeliveryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49FF296D553B009F3D0B /* DeliveryItem.swift */; };
+		FA6A4A02296D6800009F3D0B /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A01296D6800009F3D0B /* BasketCell.swift */; };
+		FA6A4A04296DBB0F009F3D0B /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +171,10 @@
 		FA6A49F4296C6A0D009F3D0B /* BasketRoutingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRoutingDelegate.swift; sourceTree = "<group>"; };
 		FA6A49F6296C6A52009F3D0B /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
 		FA6A49F9296C789F009F3D0B /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		FA6A49FC296D4B9A009F3D0B /* BasketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
+		FA6A49FF296D553B009F3D0B /* DeliveryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItem.swift; sourceTree = "<group>"; };
+		FA6A4A01296D6800009F3D0B /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
+		FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +323,7 @@
 				FA6A4936294742A0009F3D0B /* UIImageView.swift */,
 				FA6A49AF294B3037009F3D0B /* UICollectionViewExt.swift */,
 				FA6A49CC295DBED7009F3D0B /* UIStringExt.swift */,
+				FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -360,6 +369,7 @@
 		FA6A498E294873CC009F3D0B /* basket */ = {
 			isa = PBXGroup;
 			children = (
+				FA6A49FB296D4B7E009F3D0B /* items */,
 				FA6A49F8296C7885009F3D0B /* views */,
 				FA6A49932948758B009F3D0B /* BasketViewController.swift */,
 				FA6A49F2296C69A0009F3D0B /* BasketViewModel.swift */,
@@ -460,8 +470,18 @@
 			isa = PBXGroup;
 			children = (
 				FA6A49F9296C789F009F3D0B /* BasketView.swift */,
+				FA6A4A01296D6800009F3D0B /* BasketCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		FA6A49FB296D4B7E009F3D0B /* items */ = {
+			isa = PBXGroup;
+			children = (
+				FA6A49FC296D4B9A009F3D0B /* BasketItem.swift */,
+				FA6A49FF296D553B009F3D0B /* DeliveryItem.swift */,
+			);
+			path = items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,6 +624,7 @@
 				FA6A493529474274009F3D0B /* UIViewExt.swift in Sources */,
 				FA6A4996294875D2009F3D0B /* FavoritesViewController.swift in Sources */,
 				FA6A49F7296C6A52009F3D0B /* BasketCoordinator.swift in Sources */,
+				FA6A49FD296D4B9A009F3D0B /* BasketItem.swift in Sources */,
 				FA6A4937294742A0009F3D0B /* UIImageView.swift in Sources */,
 				FA6A49FA296C789F009F3D0B /* BasketView.swift in Sources */,
 				FA6A49AD294B2FD5009F3D0B /* FormDropdown.swift in Sources */,
@@ -649,11 +670,14 @@
 				FA6A49CB295A4429009F3D0B /* BottomExplorerCollectionViewCell.swift in Sources */,
 				FA6A49D9295F03C6009F3D0B /* ProductDetailsViewController.swift in Sources */,
 				FA6A49D1295DDAAC009F3D0B /* FilterViewController.swift in Sources */,
+				FA6A4A04296DBB0F009F3D0B /* UITableViewExt.swift in Sources */,
 				FA6A49E72969B5EB009F3D0B /* ExplorerRoutingDelegate.swift in Sources */,
 				FA6A49F3296C69A0009F3D0B /* BasketViewModel.swift in Sources */,
 				FA6A49BE295080C2009F3D0B /* HeadDataItem.swift in Sources */,
 				FA6A49252947404B009F3D0B /* Coordinator.swift in Sources */,
+				FA6A4A02296D6800009F3D0B /* BasketCell.swift in Sources */,
 				FA6A49402947439E009F3D0B /* Constraint+equal.swift in Sources */,
+				FA6A4A00296D553B009F3D0B /* DeliveryItem.swift in Sources */,
 				FA6A498829486CFE009F3D0B /* TabBarViewModel.swift in Sources */,
 				FA6A492D29474104009F3D0B /* StartViewModel.swift in Sources */,
 				FA6A49F1296C1D56009F3D0B /* ProductDetailsViewModel.swift in Sources */,
