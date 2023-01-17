@@ -22,9 +22,13 @@ class TabBarCoordinator: Coordinator {
         vc.view.backgroundColor = Theme.appBackgroundColor
         
         let item1 = ExplorerViewController()
+        item1.delegateRouting = self
+        item1.explorerViewModel = ExplorerViewModel()
         let icon1 = UITabBarItem(title: nil, image: UIImage(named: "explorer"), selectedImage: UIImage(named: "explorer"))
         item1.tabBarItem = icon1
         let item2 = BasketViewController()
+        item2.delegateRouting = self
+        item2.basketViewModel = BasketViewModel()
         let icon2 = UITabBarItem(title: nil, image: UIImage(named: "basket"), selectedImage: UIImage(named: "basket"))
         item2.tabBarItem = icon2
         let item3 = FavoritesViewController()
@@ -41,8 +45,14 @@ class TabBarCoordinator: Coordinator {
     }
 }
 
-// MARK: - TabBarRoutingDelegate
-extension TabBarCoordinator: TabBarRoutingDelegate {
-    
+// MARK: - ExplorerRoutingDelegate
+extension TabBarCoordinator: ExplorerRoutingDelegate {
+    func routeToProductDetails() {
+        ProductDetailsCoordinator(navigationController: navigationController).start()
+    }
 }
 
+// MARK: - BusketRoutingDelegate
+extension TabBarCoordinator: BasketRoutingDelegate {
+    
+}

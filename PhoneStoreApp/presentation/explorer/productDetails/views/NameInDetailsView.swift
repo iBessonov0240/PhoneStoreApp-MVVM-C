@@ -15,7 +15,7 @@ class CustomSegmentedControl: UIView {
     private var buttons: [UIButton]!
     private var selectorView: UIView!
     
-    var textColor:UIColor = .black
+    var textColor:UIColor = Theme.appDarkBlueColor
     var selectorViewColor: UIColor = .red
     var selectorTextColor: UIColor = .red
     

@@ -29,7 +29,6 @@ extension MiddleExplorerCollectionView: UICollectionViewDelegateFlowLayout, UICo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MiddleExplorerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-         cell.backgroundColor = .red
         cell.layer.cornerRadius = 10
         return cell
     }

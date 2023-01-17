@@ -9,8 +9,6 @@ import UIKit
 
 class HeadExplorerCollectionView: UICollectionView {
     
-    var lastSelectedIndexPath: IndexPath?
-    var selectedStatHeaders = Set<Int>()
     var model: [HeadDataItem] = [] {
         didSet {
             reloadData()
@@ -47,51 +45,18 @@ extension HeadExplorerCollectionView: UICollectionViewDelegateFlowLayout, UIColl
         
         cell.count = indexPath.item
         print("Cell selected: \(model[indexPath.row])")
-//        if cell.headIconsButton.backgroundColor == Theme.appOrangeColor && cell.headIconsButton != cell {
-//            cell.headIconsButton.backgroundColor = Theme.appWhiteColor
-//        }
-//        if indexPath.row == 0 {
-//            lastSelectedIndexPath = indexPath
-//            cell.isSelected = true
-//        }
-//        cell.isSelected = (lastSelectedIndexPath == indexPath)
-//        if selectedStatHeaders.contains(indexPath.row) {
-//            cell.headIconsButton.backgroundColor = Theme.appWhiteColor
-//        } else {
-//            cell.headIconsButton.backgroundColor = Theme.appOrangeColor
-//        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("you selected cell #\(indexPath.item)")
-//        guard lastSelectedIndexPath != indexPath else { return }
-//        selectedStatHeaders.insert(indexPath.row)
-//        collectionView.reloadItems(at: [indexPath])
-//        if let index = lastSelectedIndexPath {
-//            let cell: HeadExplorerCollectionViewCell = collectionView.cellForItem(at: index) as! HeadExplorerCollectionViewCell
-//            cell.isSelected = false
-//        }
-//        let cell: HeadExplorerCollectionViewCell = collectionView.cellForItem(at: indexPath) as! HeadExplorerCollectionViewCell
-//        cell.isSelected = true
-//        lastSelectedIndexPath = indexPath
+        if let cell = collectionView.cellForItem(at: indexPath) as? HeadExplorerCollectionViewCell {
+            cell.select()
+        }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-////        if let index = lastSelectedIndexPath {
-//            let cell: HeadExplorerCollectionViewCell = collectionView.cellForItem(at: indexPath) as! HeadExplorerCollectionViewCell
-//            cell.isSelected = false
-////        }
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        let cell: HeadExplorerCollectionViewCell = collectionView.cellForItem(at: indexPath) as! HeadExplorerCollectionViewCell
-//        cell.backgroundColor = UIColor.red
-//    }
-//
-//    // change background color back when user releases touch
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        let cell: HeadExplorerCollectionViewCell = collectionView.cellForItem(at: indexPath) as! HeadExplorerCollectionViewCell
-//        cell.backgroundColor = UIColor.cyan
-//    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? HeadExplorerCollectionViewCell {
+            cell.deselect()
+        }
+    }
 }

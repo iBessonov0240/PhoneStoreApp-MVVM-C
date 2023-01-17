@@ -10,8 +10,8 @@ import UIKit
 
 class BasketCell: UITableViewCell {
     
-    private lazy var playerAvatar: UIImageView = .create {
-        $0.image = UIImage(named: "avatar-0")
+    private lazy var phoneImage: UIImageView = .create {
+        $0.image = UIImage(named: "phone")
         $0.layer.cornerRadius = 15
         $0.backgroundColor = Theme.appWhiteColor
     }
@@ -40,50 +40,6 @@ class BasketCell: UITableViewCell {
         $0.addTarget(self, action: #selector(deletePhone), for: .touchUpInside)
     }
     
-    private lazy var separateViewTop: UIView = .create {
-        $0.backgroundColor = Theme.appBasketHalfVizorColor
-    }
-    
-    private lazy var totalPriceLabel: UILabel = .create {
-        $0.text = "Total"
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        Theme.labelStyle($0, ofSize: 15, weight: .regular)
-    }
-    
-    private lazy var totalPriceCountLabel: UILabel = .create {
-        $0.text = "$6,000 us"
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        Theme.labelStyle($0, ofSize: 15, weight: .bold)
-    }
-    
-    private lazy var deliveryLabel: UILabel = .create {
-        $0.text = "Delivery"
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        Theme.labelStyle($0, ofSize: 15, weight: .regular)
-    }
-    
-    private lazy var deliveryCountLabel: UILabel = .create {
-        $0.text = "Free"
-        $0.numberOfLines = 0
-        $0.textAlignment = .center
-        Theme.labelStyle($0, ofSize: 15, weight: .bold)
-    }
-    
-    private lazy var separateViewBottom: UIView = .create {
-        $0.backgroundColor = Theme.appBasketHalfVizorColor
-    }
-    
-    private lazy var addToCartButton: UIButton = .create {
-        $0.backgroundColor = Theme.appOrangeColor
-        $0.clipsToBounds = true
-        $0.layer.cornerRadius = 10
-        $0.addTarget(nil, action: #selector(checkout), for: .touchUpInside)
-        $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -100,12 +56,46 @@ class BasketCell: UITableViewCell {
         
     }
     
-    @objc func checkout() {
-        
-    }
-    
     private func setupLayout() {
         
+        contentView.addSubview(phoneImage, constraints: [
+            equal(\.topAnchor, constant: 45),
+            equal(\.leadingAnchor, constant: 23)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 111),
+            equal(\.widthAnchor, constant: 89)
+        ])
+        
+        contentView.addSubview(phoneName, constraints: [
+            equal(\.topAnchor, to: phoneImage, \.topAnchor),
+            equal(\.leadingAnchor, to: phoneImage, \.trailingAnchor, constant: 4)
+        ], singleConstraints: [
+            equal(\.widthAnchor, constant: 50)
+        ])
+        
+        contentView.addSubview(priceInCellLabel, constraints: [
+            equal(\.topAnchor, to: phoneName, \.bottomAnchor, constant: 6),
+            equal(\.leadingAnchor, to: phoneImage, \.trailingAnchor, constant: 4)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 25),
+            equal(\.widthAnchor, constant: 100)
+        ])
+        
+        contentView.addSubview(countView, constraints: [
+            equal(\.topAnchor, to: phoneName, \.topAnchor),
+            equal(\.leadingAnchor, to: phoneName, \.trailingAnchor, constant: 33)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 68),
+            equal(\.widthAnchor, constant: 26)
+        ])
+        
+        contentView.addSubview(deleteButton, constraints: [
+            equal(\.centerYAnchor, to: contentView, \.centerYAnchor),
+            equal(\.leadingAnchor, constant: 17)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 16),
+            equal(\.widthAnchor, constant: 15)
+        ])
     }
     
 }

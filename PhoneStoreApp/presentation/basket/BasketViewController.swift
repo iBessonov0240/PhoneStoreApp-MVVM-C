@@ -11,6 +11,8 @@ class BasketViewController: UIViewController {
 
     var delegateRouting: BasketRoutingDelegate!
     var basketViewModel: BasketViewModel!
+    private var basketModel: [BasketItem] = []
+    private var delModel: [DeliveryItem] = []
     
     private lazy var cardLabel: UILabel = .create {
         $0.numberOfLines = 0
@@ -20,38 +22,35 @@ class BasketViewController: UIViewController {
         $0.textColor = Theme.appDarkBlueColor
     }
     
-    private lazy var detailedProdView: DetailedProdView = .create {
+    private lazy var basketTableView: BasketView = .create {
+        $0.backgroundColor = Theme.appDarkBlueColor
         $0.layer.cornerRadius = 30
+        $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         setupLayout()
         setupNavigationBar()
     }
-    
+
     private func setupNavigationBar() {
-        
-        
+
         guard let navigationBar = navigationController?.navigationBar else { return }
         guard let navigationController = navigationController else  { return }
-       
-        navigationController.isNavigationBarHidden = false
-        navigationBar.backgroundColor = .white
-//        navigationController.title = "Product Details"
-        
+
+        navigationController.isNavigationBarHidden = true
+        navigationBar.backgroundColor = Theme.appBackgroundColor
+
         let leftButton = UIButton()
         leftButton.setImage(UIImage(named: "backButton"), for: .normal)
-//        leftButton.backgroundColor = Theme.appDarkBlueColor
         leftButton.setBackgroundImage(UIImage(named: "backImageBack"), for: .normal)
         leftButton.imageView?.contentMode = .scaleAspectFit
         leftButton.addTarget(self, action: #selector(closeSelf), for: .touchUpInside)
         let item = UIBarButtonItem(customView: leftButton)
         navigationItem.leftBarButtonItem = item
         navigationBar.prefersLargeTitles = false
-        
+
         let rightButton = UIButton()
         rightButton.setTitle("Add address", for: .normal)
         rightButton.setImage(UIImage(named: "ic-whiteGeo"), for: .normal)
@@ -80,6 +79,12 @@ class BasketViewController: UIViewController {
             equal(\.heightAnchor, constant: 44)
         ])
         
+        view.addSubview(basketTableView, constraints: [
+            equal(\.topAnchor, to: cardLabel, \.bottomAnchor, constant: 49),
+            equal(\.leadingAnchor),
+            equal(\.trailingAnchor),
+            equal(\.safeAreaLayoutGuide.bottomAnchor)
+        ])
         
     }
    

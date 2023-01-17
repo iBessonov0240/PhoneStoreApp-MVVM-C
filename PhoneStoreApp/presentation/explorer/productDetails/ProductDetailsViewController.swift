@@ -12,12 +12,21 @@ class ProductDetailsViewController: UIViewController {
     var delegateRouting: ProductDetailsRoutingDelegate? = nil
     var viewModel: ProductDetailsViewModel? = nil
     
+    private var modelArray: [ProductDetailItems] = []{
+        didSet {
+            productCollectionView.model = modelArray
+        }
+    }
+    
     private lazy var productCollectionView: ProductCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 1)
         let phonesCV = ProductCollectionView(frame: .zero, layout: layout)
         phonesCV.register(ProductCollectionViewCell.self)
-//        phonesCV.model = modelArray
+        phonesCV.model = modelArray
+//        phonesCV.delegate = self
+//        phonesCV.dataSource = self
         phonesCV.showsHorizontalScrollIndicator = false
         phonesCV.translatesAutoresizingMaskIntoConstraints = false
         return phonesCV
@@ -25,33 +34,27 @@ class ProductDetailsViewController: UIViewController {
     
     private lazy var detailedProdView: DetailedProdView = .create {
         $0.layer.cornerRadius = 30
+        $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.backgroundColor = .red
-        createStar()
+        title = "Product Details"
         setupNavigationBar()
         setupLayout()
     }
     
-    private func createStar() {
-        detailedProdView.setUpStars()
-    }
-    
     private func setupNavigationBar() {
-        
         
         guard let navigationBar = navigationController?.navigationBar else { return }
         guard let navigationController = navigationController else  { return }
        
         navigationController.isNavigationBarHidden = false
-        navigationBar.backgroundColor = .white
+        navigationBar.backgroundColor = Theme.appBackgroundColor
         navigationController.title = "Product Details"
         
         let leftButton = UIButton()
         leftButton.setImage(UIImage(named: "backButton"), for: .normal)
-//        leftButton.backgroundColor = Theme.appDarkBlueColor
         leftButton.setBackgroundImage(UIImage(named: "backImageBack"), for: .normal)
         leftButton.imageView?.contentMode = .scaleAspectFit
         leftButton.addTarget(self, action: #selector(backToCatalog), for: .touchUpInside)
@@ -70,7 +73,7 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @objc func backToCatalog() {
-        
+        navigationController?.popViewController(animated: true)
     }
 
     @objc func goToBusket() {
@@ -78,16 +81,22 @@ class ProductDetailsViewController: UIViewController {
     }
     
     private func setupLayout() {
+        
         view.addSubview(productCollectionView, constraints: [
-            equal(\.safeAreaLayoutGuide.topAnchor),
+            equal(\.topAnchor, constant: 20),
             equal(\.leadingAnchor),
             equal(\.trailingAnchor)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 349)
         ])
-        
+
         view.addSubview(detailedProdView, constraints: [
             equal(\.topAnchor, to: productCollectionView, \.bottomAnchor, constant: 7),
             equal(\.leadingAnchor),
-            equal(\.trailingAnchor)
+            equal(\.trailingAnchor),
+            equal(\.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    
 }

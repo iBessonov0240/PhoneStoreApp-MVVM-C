@@ -74,11 +74,13 @@
 		FA6A49F3296C69A0009F3D0B /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F2296C69A0009F3D0B /* BasketViewModel.swift */; };
 		FA6A49F5296C6A0D009F3D0B /* BasketRoutingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F4296C6A0D009F3D0B /* BasketRoutingDelegate.swift */; };
 		FA6A49F7296C6A52009F3D0B /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F6296C6A52009F3D0B /* BasketCoordinator.swift */; };
-		FA6A49FA296C789F009F3D0B /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49F9296C789F009F3D0B /* BasketView.swift */; };
 		FA6A49FD296D4B9A009F3D0B /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49FC296D4B9A009F3D0B /* BasketItem.swift */; };
 		FA6A4A00296D553B009F3D0B /* DeliveryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49FF296D553B009F3D0B /* DeliveryItem.swift */; };
 		FA6A4A02296D6800009F3D0B /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A01296D6800009F3D0B /* BasketCell.swift */; };
 		FA6A4A04296DBB0F009F3D0B /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */; };
+		FA6A4A07296ED915009F3D0B /* ProductDetailItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */; };
+		FA8781EF2976B725009131BA /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8781EE2976B725009131BA /* BasketView.swift */; };
+		FA8781F32976DD3E009131BA /* CountPhonesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8781F22976DD3E009131BA /* CountPhonesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +141,7 @@
 		FA6A499B2948981F009F3D0B /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Bold.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_576b545b1f7991d3b7b7f9f53cb1b665/Mark Pro Bold/Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
 		FA6A499D29489858009F3D0B /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Heavy.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_bd6a2c11291407cc9cb9c3a217523c70/Mark Pro Heavy/Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
 		FA6A499F29489891009F3D0B /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Medium.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_bd9fd81b81dc10c726084b91166bb111/Mark Pro Medium/Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
-		FA6A49A7294898DC009F3D0B /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Regular.ttf"; path = "../../../.Trash/Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
+		FA6A49A7294898DC009F3D0B /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Mark Pro-Regular.ttf"; path = "../../../.Trash/Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
 		FA6A49A92948C47E009F3D0B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA6A49AC294B2FD5009F3D0B /* FormDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDropdown.swift; sourceTree = "<group>"; };
 		FA6A49AF294B3037009F3D0B /* UICollectionViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExt.swift; sourceTree = "<group>"; };
@@ -170,11 +172,13 @@
 		FA6A49F2296C69A0009F3D0B /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
 		FA6A49F4296C6A0D009F3D0B /* BasketRoutingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRoutingDelegate.swift; sourceTree = "<group>"; };
 		FA6A49F6296C6A52009F3D0B /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
-		FA6A49F9296C789F009F3D0B /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		FA6A49FC296D4B9A009F3D0B /* BasketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
 		FA6A49FF296D553B009F3D0B /* DeliveryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryItem.swift; sourceTree = "<group>"; };
 		FA6A4A01296D6800009F3D0B /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
+		FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailItems.swift; sourceTree = "<group>"; };
+		FA8781EE2976B725009131BA /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		FA8781F22976DD3E009131BA /* CountPhonesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPhonesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +424,7 @@
 		FA6A49BC29507DE9009F3D0B /* items */ = {
 			isa = PBXGroup;
 			children = (
+				FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */,
 				FA6A49BD295080C2009F3D0B /* HeadDataItem.swift */,
 				FA6A49D2295DDB59009F3D0B /* FilterItem.swift */,
 			);
@@ -469,8 +474,9 @@
 		FA6A49F8296C7885009F3D0B /* views */ = {
 			isa = PBXGroup;
 			children = (
-				FA6A49F9296C789F009F3D0B /* BasketView.swift */,
 				FA6A4A01296D6800009F3D0B /* BasketCell.swift */,
+				FA8781EE2976B725009131BA /* BasketView.swift */,
+				FA8781F22976DD3E009131BA /* CountPhonesView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -620,13 +626,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6A49EF296C1D17009F3D0B /* ProductDetailsRoutingDelegate.swift in Sources */,
+				FA8781F32976DD3E009131BA /* CountPhonesView.swift in Sources */,
 				FA6A49C9295A4405009F3D0B /* BottomExplorerCollectionView.swift in Sources */,
 				FA6A493529474274009F3D0B /* UIViewExt.swift in Sources */,
 				FA6A4996294875D2009F3D0B /* FavoritesViewController.swift in Sources */,
 				FA6A49F7296C6A52009F3D0B /* BasketCoordinator.swift in Sources */,
 				FA6A49FD296D4B9A009F3D0B /* BasketItem.swift in Sources */,
 				FA6A4937294742A0009F3D0B /* UIImageView.swift in Sources */,
-				FA6A49FA296C789F009F3D0B /* BasketView.swift in Sources */,
 				FA6A49AD294B2FD5009F3D0B /* FormDropdown.swift in Sources */,
 				FA6A49CD295DBED7009F3D0B /* UIStringExt.swift in Sources */,
 				FA6A49942948758B009F3D0B /* BasketViewController.swift in Sources */,
@@ -652,6 +658,7 @@
 				FA6A49F5296C6A0D009F3D0B /* BasketRoutingDelegate.swift in Sources */,
 				FA6A4929294740AA009F3D0B /* StartViewController.swift in Sources */,
 				FA6A49DC295F1D51009F3D0B /* ProductCollectionView.swift in Sources */,
+				FA8781EF2976B725009131BA /* BasketView.swift in Sources */,
 				FA6A49C72959E092009F3D0B /* MiddleExplorerCollectionViewCell.swift in Sources */,
 				FA6A48F429473A97009F3D0B /* PhoneStoreApp.xcdatamodeld in Sources */,
 				FA6A49D6295ECDBE009F3D0B /* PickerDialog.swift in Sources */,
@@ -661,6 +668,7 @@
 				FA6A49E229644A13009F3D0B /* NameInDetailsView.swift in Sources */,
 				FA6A48EC29473A97009F3D0B /* SceneDelegate.swift in Sources */,
 				FA6A4998294875F1009F3D0B /* ProfileViewController.swift in Sources */,
+				FA6A4A07296ED915009F3D0B /* ProductDetailItems.swift in Sources */,
 				FA6A49E92969B67E009F3D0B /* ExplorerViewModel.swift in Sources */,
 				FA6A492B294740DF009F3D0B /* StartRoutingDelegate.swift in Sources */,
 				FA6A49B0294B3037009F3D0B /* UICollectionViewExt.swift in Sources */,

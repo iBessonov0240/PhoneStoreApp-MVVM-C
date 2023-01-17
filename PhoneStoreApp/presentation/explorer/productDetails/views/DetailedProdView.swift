@@ -9,12 +9,11 @@ import UIKit
 
 class DetailedProdView: UIView {
     
-    private var startIcon: UIImage = UIImage(named: "star")!
     private let stars: Int = 5
     private var fiveStars = [UIImage]()
     private var images: [UIImageView] = [UIImageView(image: UIImage(named: "ic-chip")), UIImageView(image: UIImage(named: "ic-camera")), UIImageView(image: UIImage(named: "ic-memory")), UIImageView(image: UIImage(named: "ic-hardDisk"))]
     private var imageNames: [String] = ["Exynos 990", "108 + 12 mp", "8 GB", "256 GB"]
-    var isHighlighted: Bool = false
+    private var isHighlighted: Bool = false
     
     private lazy var brandLabel: UILabel = .create {
         $0.text = "Galaxy Note 20 Ultra"
@@ -25,7 +24,7 @@ class DetailedProdView: UIView {
         let image = UIImage(named: "favorites")
         $0.backgroundColor = Theme.appDarkBlueColor
         $0.clipsToBounds = true
-        $0.layer.cornerRadius = 18.5
+        $0.layer.cornerRadius = 10
         $0.setImage(image, for: UIControl.State.normal)
         $0.addTarget(nil, action: #selector(favFromDetailTap), for: .touchUpInside)
         $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -40,30 +39,21 @@ class DetailedProdView: UIView {
     
     private lazy var detailInDetail: CustomSegmentedControl = .create {
         $0.setButtonTitles(buttonTitles: ["Shop","Details","Features"])
-        $0.selectorViewColor = .orange
-        $0.selectorTextColor = .orange
+        $0.selectorViewColor = Theme.appOrangeColor
+        $0.selectorTextColor = Theme.appDarkBlueColor
         $0.backgroundColor = .clear
     }
     
-    private lazy var imgNLabelDetail: UIStackView = .create {
-//        $0.setUpImages(images: [images])
-//        $0.setUpImagesName(names: [imageNames])
+    private lazy var imgDetailStack: UIStackView = .create {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
-        $0.spacing = 36
-        $0.addArrangedSubview(imgNLabelDetailCell)
+        $0.spacing = 64
     }
     
-    private lazy var imgNLabelDetailCell: UIStackView = .create {
-        $0.axis = .vertical
+    private lazy var imageLabelDetailStack: UIStackView = .create {
+        $0.axis = .horizontal
         $0.distribution = .fillEqually
-        $0.spacing = 5
-        $0.addArrangedSubview(imgDetail(icon: "\(images)"))
-        $0.addArrangedSubview(labelDetail(name: "\(imageNames)"))
-//        $0.addArrangedSubview(constractiveDetail(icon: "ic-chip", name: "Exynos 990"))
-//        $0.addArrangedSubview(constractiveDetail(icon: "ic-camera", name: "108 + 12 mp"))
-//        $0.addArrangedSubview(constractiveDetail(icon: "ic-memory", name: "8 GB"))
-//        $0.addArrangedSubview(constractiveDetail(icon: "ic-hardDisk", name: "256 GB"))
+        $0.spacing = 20
     }
     
     private lazy var selectedColorLabel: UILabel = .create {
@@ -72,24 +62,24 @@ class DetailedProdView: UIView {
     }
     
     private lazy var selectedColor1Button: UIButton = .create {
-        let image = UIImage(named: "selected")
-        $0.imageView?.isHidden = false
+//        $0.imageView?.isHidden = true
         $0.backgroundColor = Theme.appBrownColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 20
-        $0.setImage(image, for: UIControl.State.normal)
+        $0.setImage(UIImage(named: "selected"), for: .normal)
+//        $0.setImage(UIImage(named: "selected"), for: .selected)
         $0.addTarget(nil, action: #selector(brownBTap), for: .touchUpInside)
         $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
     
     private lazy var selectedColor2Button: UIButton = .create {
-        let image = UIImage(named: "selected")
+//        let image = UIImage(named: "selected")
         $0.imageView?.isHidden = true
         $0.backgroundColor = Theme.appDarkBlueColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 20
-        $0.setImage(image, for: UIControl.State.normal)
-        $0.addTarget(nil, action: #selector(darkBlueBTap), for: .touchUpInside)
+        $0.setImage(UIImage(named: ""), for: .normal)
+//        $0.addTarget(nil, action: #selector(darkBlueBTap), for: .touchUpInside)
         $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }
     
@@ -105,7 +95,7 @@ class DetailedProdView: UIView {
     }
     
     private lazy var selectedMemory2Button: UIButton = .create {
-        $0.backgroundColor = Theme.appBackgroundColor
+        $0.backgroundColor = Theme.appWhiteColor
         $0.setTitle("256 GB", for: UIControl.State.normal)
         $0.titleLabel?.font = .systemFont(ofSize: 13, weight: .bold)
         $0.setTitleColor(Theme.appDarkGrayColor, for: .normal)
@@ -139,6 +129,8 @@ class DetailedProdView: UIView {
         super.init(frame: frame)
         setupLayout()
         setUpStars()
+        imgDetail()
+        labelDetail()
     }
     
     required init?(coder: NSCoder) {
@@ -153,73 +145,72 @@ class DetailedProdView: UIView {
         }
     }
     
-    private func imgDetail(icon: String) -> UIImageView {
-        let iconD = UIImageView(image: UIImage(named: "\(icon)"))
-        iconD.translatesAutoresizingMaskIntoConstraints = false
-        return iconD
+    private func imgDetail() {
+        for img in images {
+            imgDetailStack.addArrangedSubview(img)
+        }
+        
     }
     
-    private func labelDetail(name: String) -> UILabel {
-        let nameD = UILabel()
-        nameD.translatesAutoresizingMaskIntoConstraints = false
-        nameD.text = name
-        return nameD
+    private func labelDetail(){
+        for name in imageNames {
+            let labelD: UILabel = .create {
+                $0.text = name
+                $0.textAlignment = .center
+                Theme.labelGrayStyle($0, ofSize: 11, weight: .regular)
+            }
+            imageLabelDetailStack.addArrangedSubview(labelD)
+        }
     }
-    
-//    private func constractiveDetail(icon: String, name: String) -> (UIImageView, UILabel){
-//        let iconD = UIImageView(image: UIImage(named: "\(icon)"))
-//        iconD.translatesAutoresizingMaskIntoConstraints = false
-//        let nameD = UILabel()
-//        nameD.translatesAutoresizingMaskIntoConstraints = false
-//        nameD.text = name
-//        return (iconD, nameD)
-//    }
     
     @objc func favFromDetailTap() {
         
     }
     
-    @objc func brownBTap() {
-//        selectedColor1Button.imageView.isHidden = !selectedColor1Button.isHidden
-        if selectedColor1Button.imageView?.isHidden == true {
-            selectedColor1Button.imageView?.isHidden = false
-            selectedColor2Button.imageView?.isHidden = true
-        } else {
-            selectedColor1Button.imageView?.isHidden = false
-            selectedColor2Button.imageView?.isHidden = true
-        }
+    @objc func brownBTap(_ sender: UIButton) {
+        
+        selectedColor1Button.setImage(UIImage(named: "selected"), for: .normal)
+        selectedColor2Button.setImage(nil, for: .normal)
     }
     
-    @objc func darkBlueBTap() {
-        if selectedColor2Button.imageView?.isHidden == true {
-            selectedColor2Button.imageView?.isHidden = false
-            selectedColor1Button.imageView?.isHidden = true
-        } else {
-            selectedColor2Button.imageView?.isHidden = false
-            selectedColor1Button.imageView?.isHidden = true
-        }
+    @objc func darkBlueBTap(_ sender: UIButton) {
+        
+        selectedColor1Button.setImage(UIImage(named: ""), for: .normal)
+        selectedColor2Button.setImage(UIImage(named: "selected"), for: .normal)
     }
     
-    @objc func lowGBTap() {
+    @objc func lowGBTap(_ sender: UIButton) {
 //        if selectedMemoryButton.backgroundColor == Theme.appOrangeColor && selectedMemoryButton.tintColor == Theme.appWhiteColor {
 //            selectedMemory2Button.backgroundColor = Theme.appBackgroundColor && selectedMemory2Button.tintColor = Theme.appDarkGrayColor
 //        }
         isHighlighted = !isHighlighted
-        
+
         if isHighlighted {
-            backgroundColor = isHighlighted ? Theme.appOrangeColor : Theme.appBackgroundColor
-            tintColor = isHighlighted ? Theme.appWhiteColor : Theme.appDarkGrayColor
-            selectedMemory2Button.isHighlighted = false
+            selectedMemoryButton.backgroundColor = Theme.appOrangeColor
+            selectedMemoryButton.tintColor = Theme.appWhiteColor
+            selectedMemory2Button.backgroundColor = Theme.appWhiteColor
+            selectedMemory2Button.tintColor = Theme.appDarkGrayColor
+//            backgroundColor = isHighlighted ? Theme.appOrangeColor : Theme.appBackgroundColor
+//            tintColor = isHighlighted ? Theme.appWhiteColor : Theme.appDarkGrayColor
+//            selectedMemory2Button.isHighlighted = false
         }
     }
     
-    @objc func highGBTap() {
+    @objc func highGBTap(_ sender: UIButton) {
         isHighlighted = !isHighlighted
         
         if isHighlighted {
-            backgroundColor = isHighlighted ? Theme.appOrangeColor : Theme.appBackgroundColor
-            tintColor = isHighlighted ? Theme.appWhiteColor : Theme.appDarkGrayColor
-            selectedMemoryButton.isHighlighted = false
+            selectedMemory2Button.backgroundColor = Theme.appOrangeColor
+            selectedMemory2Button.tintColor = Theme.appWhiteColor
+            selectedMemoryButton.backgroundColor = Theme.appWhiteColor
+            selectedMemoryButton.tintColor = Theme.appDarkGrayColor
+            
+//            backgroundColor = isHighlighted ? Theme.appOrangeColor : Theme.appBackgroundColor
+//            tintColor = isHighlighted ? Theme.appWhiteColor : Theme.appDarkGrayColor
+//            selectedMemoryButton.isHighlighted = false
+        } else {
+            selectedMemory2Button.backgroundColor = Theme.appWhiteColor
+            selectedMemory2Button.tintColor = Theme.appDarkGrayColor
         }
     }
     
@@ -240,7 +231,7 @@ class DetailedProdView: UIView {
             equal(\.centerYAnchor, to: brandLabel, \.centerYAnchor),
             equal(\.trailingAnchor, constant: -37)
         ], singleConstraints: [
-            equal(\.heightAnchor, constant: 37),
+            equal(\.heightAnchor, constant: 33),
             equal(\.widthAnchor, constant: 37)
         ])
         
@@ -248,24 +239,33 @@ class DetailedProdView: UIView {
             equal(\.topAnchor, to: brandLabel, \.bottomAnchor, constant: 7),
             equal(\.leadingAnchor, constant: 38)
         ])
-        
+
         addSubview(detailInDetail, constraints: [
             equal(\.topAnchor, to: starsStackView, \.bottomAnchor, constant: 32),
-            equal(\.leadingAnchor, constant: 38)
+            equal(\.leadingAnchor, constant: 38),
+            equal(\.trailingAnchor, constant: -37)
         ])
         
-        addSubview(imgNLabelDetail, constraints: [
+        addSubview(imgDetailStack, constraints: [
             equal(\.topAnchor, to: detailInDetail, \.bottomAnchor, constant: 33),
-            equal(\.leadingAnchor, constant: 45)
+            equal(\.leadingAnchor, constant: 45),
+            equal(\.trailingAnchor, constant: -60)
+        ], singleConstraints: [
+            equal(\.heightAnchor, constant: 28),
+            equal(\.widthAnchor, constant: 28)
         ])
-        
-        imgNLabelDetailCell.addSubview(imgNLabelDetailCell)
-        
+
+        addSubview(imageLabelDetailStack, constraints: [
+            equal(\.topAnchor, to: imgDetailStack, \.bottomAnchor, constant: 9),
+            equal(\.leadingAnchor, constant: 30),
+            equal(\.trailingAnchor, constant: -40)
+        ])
+
         addSubview(selectedColorLabel, constraints: [
-            equal(\.topAnchor, to: imgNLabelDetail, \.bottomAnchor, constant: 29),
+            equal(\.topAnchor, to: imageLabelDetailStack, \.bottomAnchor, constant: 29),
             equal(\.leadingAnchor, constant: 30)
         ])
-        
+
         addSubview(selectedColor1Button, constraints: [
             equal(\.topAnchor, to: selectedColorLabel, \.bottomAnchor, constant: 14),
             equal(\.leadingAnchor, constant: 34)
@@ -273,7 +273,7 @@ class DetailedProdView: UIView {
             equal(\.heightAnchor, constant: 40),
             equal(\.widthAnchor, constant: 40)
         ])
-        
+
         addSubview(selectedColor2Button, constraints: [
             equal(\.centerYAnchor, to: selectedColor1Button, \.centerYAnchor),
             equal(\.leadingAnchor, to: selectedColor1Button, \.trailingAnchor, constant: 19)
@@ -281,7 +281,7 @@ class DetailedProdView: UIView {
             equal(\.heightAnchor, constant: 40),
             equal(\.widthAnchor, constant: 40)
         ])
-        
+
         addSubview(selectedMemoryButton, constraints: [
             equal(\.centerYAnchor, to: selectedColor2Button, \.centerYAnchor),
             equal(\.leadingAnchor, to: selectedColor2Button, \.trailingAnchor, constant: 58)
@@ -289,7 +289,7 @@ class DetailedProdView: UIView {
             equal(\.heightAnchor, constant: 30),
             equal(\.widthAnchor, constant: 71)
         ])
-        
+
         addSubview(selectedMemory2Button, constraints: [
             equal(\.centerYAnchor, to: selectedMemoryButton, \.centerYAnchor),
             equal(\.leadingAnchor, to: selectedMemoryButton, \.trailingAnchor, constant: 20)
@@ -297,7 +297,7 @@ class DetailedProdView: UIView {
             equal(\.heightAnchor, constant: 30),
             equal(\.widthAnchor, constant: 71)
         ])
-        
+
         addSubview(addToCartButton, constraints: [
             equal(\.topAnchor, to: selectedMemoryButton, \.bottomAnchor, constant: 33),
             equal(\.leadingAnchor, constant: 30),
@@ -305,16 +305,16 @@ class DetailedProdView: UIView {
         ], singleConstraints: [
             equal(\.heightAnchor, constant: 54)
         ])
-        
+
         addToCartButton.addSubview(addToCardLabel, constraints: [
             equal(\.topAnchor, constant: 14),
             equal(\.leadingAnchor, constant: 45)
         ])
-        
+
         addToCartButton.addSubview(addToCardPrice, constraints: [
             equal(\.centerYAnchor, to: addToCardLabel, \.centerYAnchor),
             equal(\.trailingAnchor, constant: -38)
         ])
     }
-    
+
 }

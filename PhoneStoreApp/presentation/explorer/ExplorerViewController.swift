@@ -138,6 +138,8 @@ class ExplorerViewController: UIViewController {
         layout.itemSize = CGSize(width: view.frame.size.width/2.2, height: 227)
         layout.sectionInset = UIEdgeInsets(top: 11, left: 11, bottom: 11, right: 11)
         let bottomCV = BottomExplorerCollectionView(frame: .zero, layout: layout)
+        bottomCV.delegete = self
+//        bottomCV.dataSource = self
         bottomCV.register(BottomExplorerCollectionViewCell.self)
 //        headCV.model = modelArray
         bottomCV.showsHorizontalScrollIndicator = false
@@ -151,7 +153,6 @@ class ExplorerViewController: UIViewController {
         view.backgroundColor = Theme.appBackgroundColor
         setupLayout()
         setupModel()
-//        headCollectionView.allowsMultipleSelection = false
     }
     
     override func viewDidLayoutSubviews() {
@@ -160,16 +161,11 @@ class ExplorerViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-//        navigationController?.navigationBar.prefersLargeTitles = false
-//        navigationController?.setNavigationBarHidden(true, animated: true)
-//        navigationController?.navigationBar.barTintColor = UIColor.green
-//        navigationController?.navigationBar.backgroundColor = UIColor.green
-        
         guard let navigationBar = navigationController?.navigationBar else { return }
-//        guard let navigationController = navigationController else  { return }
+        guard let navigationController = navigationController else  { return }
 
-//        navigationController.isNavigationBarHidden = false
-        navigationBar.backgroundColor = .white
+        navigationController.isNavigationBarHidden = true
+        navigationBar.backgroundColor = Theme.appBackgroundColor
     }
     
     private func setupLayout() {
@@ -296,42 +292,36 @@ class ExplorerViewController: UIViewController {
         var headPhoneItem = HeadDataItem()
         headPhoneItem.categories = "Phones"
         headPhoneItem.img = UIImage(named: "phone-ic")!
-        headPhoneItem.tag = 0
         headPhoneItem.color = Theme.appWhiteColor
         modelArray.append(headPhoneItem)
         
         var headComputerItem = HeadDataItem()
         headComputerItem.categories = "Computer"
         headComputerItem.img = UIImage(named: "computer-ic")!
-        headComputerItem.tag = 1
         headComputerItem.color = Theme.appWhiteColor
         modelArray.append(headComputerItem)
         
         var headHealthItem = HeadDataItem()
         headHealthItem.categories = "Health"
         headHealthItem.img = UIImage(named: "health-ic")!
-        headHealthItem.tag = 2
         headHealthItem.color = Theme.appWhiteColor
         modelArray.append(headHealthItem)
         
         var headBooksItem = HeadDataItem()
         headBooksItem.categories = "Books"
         headBooksItem.img = UIImage(named: "books-ic")!
-        headBooksItem.tag = 3
         headBooksItem.color = Theme.appWhiteColor
         modelArray.append(headBooksItem)
         
         var headBItem = HeadDataItem()
         headBItem.categories = "Items"
         headBItem.img = UIImage(named: "books-ic")!
-        headBItem.tag = 4
         headBItem.color = Theme.appWhiteColor
         modelArray.append(headBItem)
         
         var headBsItem = HeadDataItem()
         headBsItem.categories = "Items"
         headBsItem.img = UIImage(named: "books-ic")!
-        headBsItem.tag = 5
         headBItem.color = Theme.appWhiteColor
         modelArray.append(headBsItem)
     }
@@ -371,6 +361,4 @@ extension ExplorerViewController: BottomExplorerCollectionViewDelegate {
     func routeToDetails() {
         delegateRouting.routeToProductDetails()
     }
-    
-    
 }

@@ -20,6 +20,7 @@ struct Theme {
     static var appOrangeColor: UIColor = UIColor(hexString: "#FF6E4E")!
     static var appSearchColor: UIColor = UIColor(hexString: "#01003580")!
     static var appGrayColor: UIColor = UIColor(hexString: "#CCCCCC")!
+    static var appLightGrayColor: UIColor = UIColor(hexString: "#B7B7B7")!
     static var appDarkGrayColor: UIColor = UIColor(hexString: "#8D8D8D")!
     static var appBrownColor: UIColor = UIColor(hexString: "#772D03")!
     static var appBasketHalfVizorColor: UIColor = UIColor(hexString: "#282843")!
@@ -35,5 +36,10 @@ struct Theme {
     static func labelStyle(_ txtView: UILabel, ofSize: CGFloat = 15, weight:  UIFont.Weight = .medium, name: UIFont.TextStyle.RawValue = "Mark Pro") {
         txtView.font = .systemFont(ofSize: ofSize, weight: weight)
         txtView.textColor = appDarkBlueColor
+    }
+    
+    static func labelGrayStyle(_ txtView: UILabel, ofSize: CGFloat = 15, weight:  UIFont.Weight = .regular, name: UIFont.TextStyle.RawValue = "Mark Pro") {
+        txtView.font = .systemFont(ofSize: ofSize, weight: weight)
+        txtView.textColor = appLightGrayColor
     }
 }
