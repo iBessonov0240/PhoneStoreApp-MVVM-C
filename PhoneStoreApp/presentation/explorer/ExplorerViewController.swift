@@ -149,10 +149,15 @@ class ExplorerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         view.backgroundColor = Theme.appBackgroundColor
+        explorerViewModel.makeAPIRequest()
         setupLayout()
         setupModel()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -332,6 +337,9 @@ class ExplorerViewController: UIViewController {
     
     @objc private func showFilter() {
        let filterVC = FilterViewController(filters: filters)
+//        filterVC.modalPresentationStyle = .formSheet
+//        filterVC.preferredContentSize = .init(width: 500, height: 400)
+//        filterVC.modalTransitionStyle = .crossDissolve
         present(filterVC, animated: true)
     }
     

@@ -10,8 +10,9 @@ import UIKit
 class BottomExplorerCollectionViewCell: UICollectionViewCell {
     
 //    private let backgroundImage: UIImage = UIImage(named: "")
+    private var bottomDataItem: ExplorerProducts? = nil
      
-     private lazy var backgroundImageView: UIImageView = .create {
+     private lazy var phonesImageView: UIImageView = .create {
  //        $0.image = backgroundImage
          $0.backgroundColor = .black
          $0.layer.cornerRadius = 10
@@ -72,7 +73,7 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
     
     private func setupLayout() {
         
-        contentView.addSubview(backgroundImageView, constraints: [
+        contentView.addSubview(phonesImageView, constraints: [
             equal(\.topAnchor, constant: 5),
             equal(\.leadingAnchor, constant: 3),
             equal(\.trailingAnchor, constant: -3)
@@ -89,7 +90,7 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
         ])
         
         contentView.addSubview(newPriceLabel, constraints: [
-            equal(\.topAnchor, to: backgroundImageView, \.bottomAnchor, constant: 2),
+            equal(\.topAnchor, to: phonesImageView, \.bottomAnchor, constant: 2),
             equal(\.leadingAnchor, constant: 21)
         ], singleConstraints: [
             equal(\.heightAnchor, constant: 20)
@@ -108,5 +109,10 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
         ], singleConstraints: [
             equal(\.heightAnchor, constant: 13)
         ])
+    }
+    
+    func render(bottomItem: ExplorerProducts) {
+        phonesImageView
+        bottomDataItem = bottomItem
     }
 }

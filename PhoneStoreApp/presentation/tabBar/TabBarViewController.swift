@@ -16,7 +16,6 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.changeUnSelectedColor()
         self.tabBar.tintColor = Theme.appOrangeColor
-        self.tabBar.backgroundColor = Theme.appDarkBlueColor
         self.tabBar.layer.masksToBounds = true
         self.tabBar.isTranslucent = true
         self.tabBar.barStyle = .default
@@ -24,6 +23,8 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.tabBar.isTranslucent = false
         self.tabBar.barTintColor = Theme.appDarkBlueColor
+//        view.backgroundColor = Theme.appBackgroundColor
+
     }
     
     private func changeUnSelectedColor() {

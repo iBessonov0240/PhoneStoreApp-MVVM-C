@@ -19,7 +19,7 @@ class TabBarCoordinator: Coordinator {
     func start() {
         let vc = TabBarViewController()
         vc.startViewModel = TabBarViewModel()
-        vc.view.backgroundColor = Theme.appBackgroundColor
+//        vc.view.backgroundColor = Theme.appBackgroundColor
         
         let item1 = ExplorerViewController()
         item1.delegateRouting = self
@@ -42,6 +42,7 @@ class TabBarCoordinator: Coordinator {
         vc.viewControllers = controllers
         vc.selectedIndex = 0
         navigationController.pushViewController(vc, animated: false)
+
     }
 }
 

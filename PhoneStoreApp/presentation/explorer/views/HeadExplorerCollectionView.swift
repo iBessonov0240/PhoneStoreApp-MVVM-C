@@ -44,7 +44,7 @@ extension HeadExplorerCollectionView: UICollectionViewDelegateFlowLayout, UIColl
         cell.headIconsButton.backgroundColor = Theme.appWhiteColor
         
         cell.count = indexPath.item
-        print("Cell selected: \(model[indexPath.row])")
+//        print("Cell selected: \(model[indexPath.row])")
         return cell
     }
     
