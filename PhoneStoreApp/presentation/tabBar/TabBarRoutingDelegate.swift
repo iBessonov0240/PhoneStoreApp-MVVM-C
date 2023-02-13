@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TabBarRoutingDelegate: class {
+protocol TabBarRoutingDelegate: AnyObject {
     
 }

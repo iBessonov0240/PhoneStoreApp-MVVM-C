@@ -9,7 +9,13 @@ import UIKit
 
 class BottomExplorerCollectionView: UICollectionView {
     
-    var delegete: BottomExplorerCollectionViewDelegate? = nil
+    var model: [BestSellerProduct] = [] {
+        didSet {
+            reloadData()
+            layoutIfNeeded()
+        }
+    }
+    var delegateRoute: BottomExplorerCollectionViewDelegate? = nil
 
     init(frame: CGRect, layout: UICollectionViewFlowLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -23,23 +29,23 @@ class BottomExplorerCollectionView: UICollectionView {
     }
 }
 
-extension BottomExplorerCollectionView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension BottomExplorerCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return model.count
+        print("-------->>>>>>>\(model.count)")
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BottomExplorerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.backgroundColor = Theme.appWhiteColor
+        cell.render(bottomItem: model[indexPath.item])
         cell.layer.cornerRadius = 10
-        cell.tag = indexPath.row
-        
+        cell.backgroundColor = .red
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        delegete?.routeToDetails()
+        delegateRoute?.routeToDetails()
         print("routing delegate:____ \(indexPath.row)")
     }
     

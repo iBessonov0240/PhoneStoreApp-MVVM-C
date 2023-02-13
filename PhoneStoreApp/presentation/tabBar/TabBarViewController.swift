@@ -19,8 +19,8 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.masksToBounds = true
         self.tabBar.isTranslucent = true
         self.tabBar.barStyle = .default
-        self.tabBar.layer.cornerRadius = 30
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+//        self.tabBar.layer.cornerRadius = 30
+//        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         self.tabBar.isTranslucent = false
         self.tabBar.barTintColor = Theme.appDarkBlueColor
 //        view.backgroundColor = Theme.appBackgroundColor

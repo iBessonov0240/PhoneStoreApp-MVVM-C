@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class BottomExplorerCollectionViewCell: UICollectionViewCell {
     
-//    private let backgroundImage: UIImage = UIImage(named: "")
-    private var bottomDataItem: ExplorerProducts? = nil
+    var delegate: BottomExplorerCollectionViewCellDelegate? = nil
+    
+    private var bottomDataItem: BestSellerProduct? = nil
      
      private lazy var phonesImageView: UIImageView = .create {
  //        $0.image = backgroundImage
-         $0.backgroundColor = .black
+         $0.backgroundColor = .gray
          $0.layer.cornerRadius = 10
      }
     
@@ -59,6 +61,9 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
     
     @objc func changeFavor() {
         favorites.isSelected.toggle()
+        
+        guard let explorerProducts = bottomDataItem else { return }
+        delegate?.setFavorite(product: explorerProducts)
     }
     
     override init(frame: CGRect) {
@@ -111,8 +116,18 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func render(bottomItem: ExplorerProducts) {
-        phonesImageView
+    func render(bottomItem: BestSellerProduct) {
+        if let url = URL(string: (bottomItem.picture!)) {
+            phonesImageView.af.setImage(withURL: url)
+        }
+        newPriceLabel.text = "\(bottomItem.discountPrice ?? 0)"
+        oldPriceLabel.text = "\(bottomItem.priceWithoutDiscount ?? 0)"
+        nameLabel.text = bottomItem.title
+        favorites.isSelected = bottomItem.isFavorites ?? true
         bottomDataItem = bottomItem
     }
+}
+
+protocol BottomExplorerCollectionViewCellDelegate {
+    func setFavorite(product: BestSellerProduct)
 }

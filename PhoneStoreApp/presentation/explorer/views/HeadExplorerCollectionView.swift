@@ -42,7 +42,6 @@ extension HeadExplorerCollectionView: UICollectionViewDelegateFlowLayout, UIColl
         let cell: HeadExplorerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.render(headItem: model[indexPath.row])
         cell.headIconsButton.backgroundColor = Theme.appWhiteColor
-        
         cell.count = indexPath.item
 //        print("Cell selected: \(model[indexPath.row])")
         return cell

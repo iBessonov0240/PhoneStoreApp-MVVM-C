@@ -19,6 +19,12 @@ class ExplorerViewController: UIViewController {
         }
     }
     
+    private var bottomModelArray: [BestSellerProduct] = [] {
+        didSet {
+            bottomCollectionView.model = bottomModelArray
+        }
+    }
+    
     private lazy var scrollView: UIScrollView = .create {
         $0.showsVerticalScrollIndicator = false
     }
@@ -138,10 +144,8 @@ class ExplorerViewController: UIViewController {
         layout.itemSize = CGSize(width: view.frame.size.width/2.2, height: 227)
         layout.sectionInset = UIEdgeInsets(top: 11, left: 11, bottom: 11, right: 11)
         let bottomCV = BottomExplorerCollectionView(frame: .zero, layout: layout)
-        bottomCV.delegete = self
-//        bottomCV.dataSource = self
         bottomCV.register(BottomExplorerCollectionViewCell.self)
-//        headCV.model = modelArray
+        bottomCV.model = bottomModelArray
         bottomCV.showsHorizontalScrollIndicator = false
         bottomCV.translatesAutoresizingMaskIntoConstraints = false
         return bottomCV
@@ -150,10 +154,17 @@ class ExplorerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.appBackgroundColor
-        explorerViewModel.makeAPIRequest()
+        explorerViewModel.makeAPIRequest { (explorerProducts) in
+//            DispatchQueue.main.async {
+                self.bottomModelArray = explorerProducts.bestSeller
+                self.bottomCollectionView.reloadData()
+                if let firstProduct = explorerProducts.bestSeller.first {
+                    print(firstProduct.title as Any)
+//                }
+            }
+        }
         setupLayout()
         setupModel()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -297,7 +308,7 @@ class ExplorerViewController: UIViewController {
         var headPhoneItem = HeadDataItem()
         headPhoneItem.categories = "Phones"
         headPhoneItem.img = UIImage(named: "phone-ic")!
-        headPhoneItem.color = Theme.appWhiteColor
+        headPhoneItem.color = Theme.appOrangeColor
         modelArray.append(headPhoneItem)
         
         var headComputerItem = HeadDataItem()
@@ -365,8 +376,16 @@ extension ExplorerViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - BottomExplorerCollectionViewDelegate
 extension ExplorerViewController: BottomExplorerCollectionViewDelegate {
     func routeToDetails() {
         delegateRouting.routeToProductDetails()
+    }
+}
+
+// MARK: - BottomExplorerCollectionViewCellDelegate
+extension ExplorerViewController: BottomExplorerCollectionViewCellDelegate {
+    func setFavorite(product: BestSellerProduct) {
+        explorerViewModel.setFavorite(product: product)
     }
 }

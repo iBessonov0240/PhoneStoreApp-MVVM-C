@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol StartRoutingDelegate: class {
+protocol StartRoutingDelegate: AnyObject {
     func routeToTabBar()
 }

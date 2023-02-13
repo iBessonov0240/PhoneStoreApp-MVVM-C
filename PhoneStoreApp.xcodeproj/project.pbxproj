@@ -46,10 +46,6 @@
 		FA6A49942948758B009F3D0B /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49932948758B009F3D0B /* BasketViewController.swift */; };
 		FA6A4996294875D2009F3D0B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4995294875D2009F3D0B /* FavoritesViewController.swift */; };
 		FA6A4998294875F1009F3D0B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4997294875F1009F3D0B /* ProfileViewController.swift */; };
-		FA6A499C2948981F009F3D0B /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6A499B2948981F009F3D0B /* Mark Pro-Bold.ttf */; };
-		FA6A499E29489858009F3D0B /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6A499D29489858009F3D0B /* Mark Pro-Heavy.ttf */; };
-		FA6A49A029489891009F3D0B /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6A499F29489891009F3D0B /* Mark Pro-Medium.ttf */; };
-		FA6A49A8294898DC009F3D0B /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6A49A7294898DC009F3D0B /* Mark Pro-Regular.ttf */; };
 		FA6A49AA2948C47E009F3D0B /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49A92948C47E009F3D0B /* TabBarViewController.swift */; };
 		FA6A49AD294B2FD5009F3D0B /* FormDropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49AC294B2FD5009F3D0B /* FormDropdown.swift */; };
 		FA6A49B0294B3037009F3D0B /* UICollectionViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A49AF294B3037009F3D0B /* UICollectionViewExt.swift */; };
@@ -86,6 +82,14 @@
 		FA6A4A04296DBB0F009F3D0B /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */; };
 		FA6A4A07296ED915009F3D0B /* ProductDetailItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */; };
 		FA8781F32976DD3E009131BA /* CountPhonesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8781F22976DD3E009131BA /* CountPhonesView.swift */; };
+		FAA40F81298E51D10028C269 /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */; };
+		FAA40F82298E51D10028C269 /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */; };
+		FAA40F83298E51D10028C269 /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */; };
+		FAA40F84298E51D10028C269 /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */; };
+		FAA40F8A298E52890028C269 /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */; };
+		FAA40F8B298E52890028C269 /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */; };
+		FAA40F8C298E52890028C269 /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */; };
+		FAA40F8D298E52890028C269 /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,10 +159,6 @@
 		FA6A49932948758B009F3D0B /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		FA6A4995294875D2009F3D0B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		FA6A4997294875F1009F3D0B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		FA6A499B2948981F009F3D0B /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Bold.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_576b545b1f7991d3b7b7f9f53cb1b665/Mark Pro Bold/Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
-		FA6A499D29489858009F3D0B /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Heavy.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_bd6a2c11291407cc9cb9c3a217523c70/Mark Pro Heavy/Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
-		FA6A499F29489891009F3D0B /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Mark Pro-Medium.ttf"; path = "../../../Downloads/OnlineWebFonts_COM_bd9fd81b81dc10c726084b91166bb111/Mark Pro Medium/Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
-		FA6A49A7294898DC009F3D0B /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Mark Pro-Regular.ttf"; path = "../../../.Trash/Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
 		FA6A49A92948C47E009F3D0B /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA6A49AC294B2FD5009F3D0B /* FormDropdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormDropdown.swift; sourceTree = "<group>"; };
 		FA6A49AF294B3037009F3D0B /* UICollectionViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExt.swift; sourceTree = "<group>"; };
@@ -195,6 +195,14 @@
 		FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailItems.swift; sourceTree = "<group>"; };
 		FA8781F22976DD3E009131BA /* CountPhonesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPhonesView.swift; sourceTree = "<group>"; };
+		FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
+		FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
+		FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
+		FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
+		FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
+		FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
+		FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
+		FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +243,6 @@
 				614204018F352B64A348DAC2 /* Pods-PhoneStoreAppTests.debug.xcconfig */,
 				E686CC43C0EA499E7819BDB8 /* Pods-PhoneStoreAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -297,10 +304,7 @@
 				FA6A48F729473A98009F3D0B /* LaunchScreen.storyboard */,
 				FA6A48FA29473A98009F3D0B /* Info.plist */,
 				FA6A48F229473A97009F3D0B /* PhoneStoreApp.xcdatamodeld */,
-				FA6A49A7294898DC009F3D0B /* Mark Pro-Regular.ttf */,
-				FA6A499B2948981F009F3D0B /* Mark Pro-Bold.ttf */,
-				FA6A499D29489858009F3D0B /* Mark Pro-Heavy.ttf */,
-				FA6A499F29489891009F3D0B /* Mark Pro-Medium.ttf */,
+				FAA40F7C298E51D10028C269 /* MarkPro */,
 			);
 			path = PhoneStoreApp;
 			sourceTree = "<group>";
@@ -545,6 +549,30 @@
 			path = items;
 			sourceTree = "<group>";
 		};
+		FAA40F7C298E51D10028C269 /* MarkPro */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40F85298E52890028C269 /* MarkPro */,
+				FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */,
+				FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */,
+				FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */,
+				FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */,
+			);
+			name = MarkPro;
+			path = ../../MarkPro;
+			sourceTree = "<group>";
+		};
+		FAA40F85298E52890028C269 /* MarkPro */ = {
+			isa = PBXGroup;
+			children = (
+				FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */,
+				FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */,
+				FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */,
+				FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */,
+			);
+			name = MarkPro;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -655,12 +683,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6A48F929473A98009F3D0B /* LaunchScreen.storyboard in Resources */,
+				FAA40F8C298E52890028C269 /* Mark Pro-Regular.ttf in Resources */,
+				FAA40F8A298E52890028C269 /* Mark Pro-Medium.ttf in Resources */,
+				FAA40F8B298E52890028C269 /* Mark Pro-Bold.ttf in Resources */,
+				FAA40F83298E51D10028C269 /* Mark Pro-Regular.ttf in Resources */,
+				FAA40F81298E51D10028C269 /* Mark Pro-Medium.ttf in Resources */,
+				FAA40F82298E51D10028C269 /* Mark Pro-Bold.ttf in Resources */,
 				FA6A48F629473A98009F3D0B /* Assets.xcassets in Resources */,
-				FA6A499C2948981F009F3D0B /* Mark Pro-Bold.ttf in Resources */,
+				FAA40F8D298E52890028C269 /* Mark Pro-Heavy.ttf in Resources */,
 				FA6A48F129473A97009F3D0B /* Main.storyboard in Resources */,
-				FA6A499E29489858009F3D0B /* Mark Pro-Heavy.ttf in Resources */,
-				FA6A49A8294898DC009F3D0B /* Mark Pro-Regular.ttf in Resources */,
-				FA6A49A029489891009F3D0B /* Mark Pro-Medium.ttf in Resources */,
+				FAA40F84298E51D10028C269 /* Mark Pro-Heavy.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
