@@ -20,16 +20,10 @@ class ExplorerViewModel: BottomExplorerCollectionViewCellDelegate{
                 guard let data = data else { return }
                 print(data)
                 let response = try JSONDecoder().decode(ExplorerProducts.self, from: data)
+                
+                completion(response)
+                
 //                for product in response.homeStore {
-//                    
-//                }
-                for sellProduct in response.bestSeller {
-                    self.phones.append(sellProduct)
-                    print("__________\(sellProduct)")
-                }
-//                completion(response)
-//                if let homeStore = response["home_store"] {
-//                    for product in homeStore {
 //                    print("Product ID: \(product.id)")
 //                    print("Title: \(product.title)")
 //                    print("Subtitle: \(product.subtitle)")
@@ -37,9 +31,8 @@ class ExplorerViewModel: BottomExplorerCollectionViewCellDelegate{
 //                    print("Is New: \(product.isNew)")
 //                    print("Is Buy: \(product.isBuy)")
 //                }
-//            }
-//                        if let bestSeller = response[""] {
-//                            for product in bestSeller {
+//            
+//                for product in response.bestSeller {
 //                                print("Product ID: \(product.id)")
 //                                print("Title: \(product.title)")
 //                                print("Price without discount: \(product.priceWithoutDiscount)")
@@ -47,7 +40,7 @@ class ExplorerViewModel: BottomExplorerCollectionViewCellDelegate{
 //                                print("Picture URL: \(product.picture)")
 //                                print("Is favorites: \(product.isFavorites)")
 //                            }
-//                        }
+                        
 //                        print(response)
                     } catch let error {
                         print(String(describing: error))

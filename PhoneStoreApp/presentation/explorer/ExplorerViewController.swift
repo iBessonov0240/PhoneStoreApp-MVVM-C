@@ -19,6 +19,12 @@ class ExplorerViewController: UIViewController {
         }
     }
     
+    private var middleModelArray: [HomeStoreProduct] = [] {
+        didSet {
+            middleCollectionView.model = middleModelArray
+        }
+    }
+    
     private var bottomModelArray: [BestSellerProduct] = [] {
         didSet {
             bottomCollectionView.model = bottomModelArray
@@ -117,7 +123,7 @@ class ExplorerViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 4)
         let middleCV = MiddleExplorerCollectionView(frame: .zero, layout: layout)
         middleCV.register(MiddleExplorerCollectionViewCell.self)
-//        headCV.model = modelArray
+        middleCV.model = middleModelArray
         middleCV.showsHorizontalScrollIndicator = false
         middleCV.translatesAutoresizingMaskIntoConstraints = false
         return middleCV
@@ -154,17 +160,11 @@ class ExplorerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = Theme.appBackgroundColor
-        explorerViewModel.makeAPIRequest { (explorerProducts) in
-//            DispatchQueue.main.async {
-                self.bottomModelArray = explorerProducts.bestSeller
-                self.bottomCollectionView.reloadData()
-                if let firstProduct = explorerProducts.bestSeller.first {
-                    print(firstProduct.title as Any)
-//                }
-            }
-        }
+        
         setupLayout()
         setupModel()
+        homeStoreModel()
+        bestSellerModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,6 +174,26 @@ class ExplorerViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: view.frame.size.height + bottomCollectionView.frame.origin.y)
+    }
+    
+    private func homeStoreModel() {
+        explorerViewModel.makeAPIRequest { (homeStoreProducts) in
+            DispatchQueue.main.async {
+                self.middleModelArray = homeStoreProducts.homeStore
+                self.middleCollectionView.reloadData()
+                
+            }
+        }
+    }
+    
+    private func bestSellerModel() {
+        explorerViewModel.makeAPIRequest { (explorerProducts) in
+            DispatchQueue.main.async {
+                self.bottomModelArray = explorerProducts.bestSeller
+                self.bottomCollectionView.reloadData()
+                
+            }
+        }
     }
     
     private func setupNavigationBar() {

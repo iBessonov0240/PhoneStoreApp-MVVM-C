@@ -9,6 +9,12 @@ import UIKit
 
 class MiddleExplorerCollectionView: UICollectionView {
     
+    var model: [HomeStoreProduct] = [] {
+        didSet {
+            reloadData()
+        }
+    }
+    
     init(frame: CGRect, layout: UICollectionViewFlowLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         self.dataSource = self
@@ -24,12 +30,12 @@ class MiddleExplorerCollectionView: UICollectionView {
 extension MiddleExplorerCollectionView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MiddleExplorerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.layer.cornerRadius = 10
+        cell.render(middleItem: model[indexPath.row])
         return cell
     }
     

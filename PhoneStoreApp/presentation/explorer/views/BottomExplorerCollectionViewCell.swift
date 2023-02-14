@@ -15,8 +15,7 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
     private var bottomDataItem: BestSellerProduct? = nil
      
      private lazy var phonesImageView: UIImageView = .create {
- //        $0.image = backgroundImage
-         $0.backgroundColor = .gray
+         $0.backgroundColor = Theme.appBackgroundColor
          $0.layer.cornerRadius = 10
      }
     
@@ -68,7 +67,8 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        contentView.layer.cornerRadius = 10
+        contentView.backgroundColor = Theme.appWhiteColor
         setupLayout()
     }
     
@@ -120,8 +120,8 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
         if let url = URL(string: (bottomItem.picture!)) {
             phonesImageView.af.setImage(withURL: url)
         }
-        newPriceLabel.text = "\(bottomItem.discountPrice ?? 0)"
-        oldPriceLabel.text = "\(bottomItem.priceWithoutDiscount ?? 0)"
+        newPriceLabel.text = "$\(bottomItem.discountPrice ?? 0)"
+        oldPriceLabel.text = "$\(bottomItem.priceWithoutDiscount ?? 0)"
         nameLabel.text = bottomItem.title
         favorites.isSelected = bottomItem.isFavorites ?? true
         bottomDataItem = bottomItem

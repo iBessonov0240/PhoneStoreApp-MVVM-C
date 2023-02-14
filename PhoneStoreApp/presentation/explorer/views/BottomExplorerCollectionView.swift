@@ -12,7 +12,6 @@ class BottomExplorerCollectionView: UICollectionView {
     var model: [BestSellerProduct] = [] {
         didSet {
             reloadData()
-            layoutIfNeeded()
         }
     }
     var delegateRoute: BottomExplorerCollectionViewDelegate? = nil
@@ -22,6 +21,7 @@ class BottomExplorerCollectionView: UICollectionView {
         self.dataSource = self
         self.delegate = self
         self.backgroundColor = Theme.appBackgroundColor
+        self.allowsMultipleSelection = false
     }
     
     required init?(coder: NSCoder) {
@@ -31,15 +31,13 @@ class BottomExplorerCollectionView: UICollectionView {
 
 extension BottomExplorerCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
         print("-------->>>>>>>\(model.count)")
+        return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: BottomExplorerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.render(bottomItem: model[indexPath.item])
-        cell.layer.cornerRadius = 10
-        cell.backgroundColor = .red
+        cell.render(bottomItem: model[indexPath.row])
         return cell
     }
     

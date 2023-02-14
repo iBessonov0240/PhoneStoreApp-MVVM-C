@@ -6,24 +6,25 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class MiddleExplorerCollectionViewCell: UICollectionViewCell {
     
-//    private let backgroundImage: UIImage = UIImage(named: "")
+    private var middleDataItem: HomeStoreProduct? = nil
     
     private lazy var backgroundImageView: UIImageView = .create {
-//        $0.image = backgroundImage
         $0.backgroundColor = .black
         $0.layer.cornerRadius = 10
     }
     
-    private lazy var allItemsButton: UIButton = .create {
+    private lazy var newItemsButton: UIButton = .create {
         $0.backgroundColor = Theme.appOrangeColor
         $0.setTitle("New", for: UIControl.State.normal)
         $0.titleLabel?.font = .systemFont(ofSize: 10, weight: .bold)
         $0.setTitleColor(Theme.appWhiteColor, for: .normal)
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 13.5
+        $0.isHidden = true
 //        $0.setImage(image, for: UIControl.State.normal)
 //        $0.addTarget(nil, action: #selector(), for: .touchUpInside)
         $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
@@ -64,7 +65,8 @@ class MiddleExplorerCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        contentView.layer.cornerRadius = 10
+        contentView.backgroundColor = Theme.appBackgroundColor
         setupLayout()
     }
     
@@ -77,7 +79,7 @@ class MiddleExplorerCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(backgroundImageView, constraints: .pin)
         backgroundImageView.contentMode = .scaleAspectFill
         
-        contentView.addSubview(allItemsButton, constraints: [
+        contentView.addSubview(newItemsButton, constraints: [
             equal(\.topAnchor, constant: 18),
             equal(\.leadingAnchor, constant: 32)
         ], singleConstraints: [
@@ -86,8 +88,8 @@ class MiddleExplorerCollectionViewCell: UICollectionViewCell {
         ])
         
         contentView.addSubview(titleLabel, constraints: [
-            equal(\.topAnchor, to: allItemsButton, \.bottomAnchor, constant: 18),
-            equal(\.leadingAnchor, to: allItemsButton, \.leadingAnchor)
+            equal(\.topAnchor, to: newItemsButton, \.bottomAnchor, constant: 18),
+            equal(\.leadingAnchor, to: newItemsButton, \.leadingAnchor)
         ], singleConstraints: [
             equal(\.heightAnchor, constant: 30)
         ])
@@ -106,5 +108,14 @@ class MiddleExplorerCollectionViewCell: UICollectionViewCell {
             equal(\.heightAnchor, constant: 23),
             equal(\.widthAnchor, constant: 98)
         ])
+    }
+    
+    func render(middleItem: HomeStoreProduct) {
+        if let url = URL(string: (middleItem.picture!)) {
+            backgroundImageView.af.setImage(withURL: url)
+        }
+        newItemsButton.isHidden = middleItem.isNew ?? false
+        titleLabel.text = "\(middleItem.title ?? "")"
+        subtitleLabel.text = "\(middleItem.subtitle ?? "")"
     }
 }
