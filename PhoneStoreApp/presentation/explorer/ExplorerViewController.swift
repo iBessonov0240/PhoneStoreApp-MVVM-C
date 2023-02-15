@@ -13,7 +13,7 @@ class ExplorerViewController: UIViewController {
     var explorerViewModel: ExplorerViewModel!
     private var filters: PhoneFilter?
     
-    private var modelArray: [HeadDataItem] = []{
+    private var modelArray: [HeadDataItem] = [] {
         didSet {
             headCollectionView.model = modelArray
         }
@@ -152,6 +152,7 @@ class ExplorerViewController: UIViewController {
         let bottomCV = BottomExplorerCollectionView(frame: .zero, layout: layout)
         bottomCV.register(BottomExplorerCollectionViewCell.self)
         bottomCV.model = bottomModelArray
+        bottomCV.delegateRoute = self
         bottomCV.showsHorizontalScrollIndicator = false
         bottomCV.translatesAutoresizingMaskIntoConstraints = false
         return bottomCV
@@ -163,8 +164,8 @@ class ExplorerViewController: UIViewController {
         
         setupLayout()
         setupModel()
-        homeStoreModel()
-        bestSellerModel()
+        homeStoreLoader()
+        bestSellerLoader()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,7 +177,7 @@ class ExplorerViewController: UIViewController {
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: view.frame.size.height + bottomCollectionView.frame.origin.y)
     }
     
-    private func homeStoreModel() {
+    private func homeStoreLoader() {
         explorerViewModel.makeAPIRequest { (homeStoreProducts) in
             DispatchQueue.main.async {
                 self.middleModelArray = homeStoreProducts.homeStore
@@ -186,7 +187,7 @@ class ExplorerViewController: UIViewController {
         }
     }
     
-    private func bestSellerModel() {
+    private func bestSellerLoader() {
         explorerViewModel.makeAPIRequest { (explorerProducts) in
             DispatchQueue.main.async {
                 self.bottomModelArray = explorerProducts.bestSeller

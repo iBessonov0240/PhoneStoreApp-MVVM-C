@@ -15,6 +15,7 @@ class BottomExplorerCollectionViewCell: UICollectionViewCell {
     private var bottomDataItem: BestSellerProduct? = nil
      
      private lazy var phonesImageView: UIImageView = .create {
+         $0.image = UIImage(named: "phone")
          $0.backgroundColor = Theme.appBackgroundColor
          $0.layer.cornerRadius = 10
      }

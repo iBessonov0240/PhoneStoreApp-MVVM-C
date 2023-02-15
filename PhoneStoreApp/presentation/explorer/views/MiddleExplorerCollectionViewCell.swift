@@ -13,7 +13,7 @@ class MiddleExplorerCollectionViewCell: UICollectionViewCell {
     private var middleDataItem: HomeStoreProduct? = nil
     
     private lazy var backgroundImageView: UIImageView = .create {
-        $0.backgroundColor = .black
+        $0.backgroundColor = Theme.appBackgroundColor
         $0.layer.cornerRadius = 10
     }
     

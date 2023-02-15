@@ -11,8 +11,8 @@ class ProductDetailsViewController: UIViewController {
     
     var delegateRouting: ProductDetailsRoutingDelegate? = nil
     var viewModel: ProductDetailsViewModel? = nil
-    
-    private var modelArray: [ProductDetailItems] = []{
+
+    private var modelArray: [ProductDetails] = []{
         didSet {
             productCollectionView.model = modelArray
         }
@@ -25,8 +25,6 @@ class ProductDetailsViewController: UIViewController {
         let phonesCV = ProductCollectionView(frame: .zero, layout: layout)
         phonesCV.register(ProductCollectionViewCell.self)
         phonesCV.model = modelArray
-//        phonesCV.delegate = self
-//        phonesCV.dataSource = self
         phonesCV.showsHorizontalScrollIndicator = false
         phonesCV.translatesAutoresizingMaskIntoConstraints = false
         return phonesCV
@@ -44,15 +42,22 @@ class ProductDetailsViewController: UIViewController {
         setupLayout()
     }
     
+    private func detailsLoader() {
+        viewModel?.makeAPIRequest { productDetails in
+                    // handle the received productDetails
+                    print(productDetails)
+                }
+    }
+    
     private func setupNavigationBar() {
-        
+
         guard let navigationBar = navigationController?.navigationBar else { return }
         guard let navigationController = navigationController else  { return }
-       
+
         navigationController.isNavigationBarHidden = false
         navigationBar.backgroundColor = Theme.appBackgroundColor
         navigationController.title = "Product Details"
-        
+
         let leftButton = UIButton()
         leftButton.setImage(UIImage(named: "backButton"), for: .normal)
         leftButton.setBackgroundImage(UIImage(named: "backImageBack"), for: .normal)
@@ -61,7 +66,7 @@ class ProductDetailsViewController: UIViewController {
         let item = UIBarButtonItem(customView: leftButton)
         navigationItem.leftBarButtonItem = item
         navigationBar.prefersLargeTitles = false
-        
+
         let rightButton = UIButton()
         rightButton.setImage(UIImage(named: "basket"), for: .normal)
         rightButton.setBackgroundImage(UIImage(named: "navBusketBack"), for: .normal)
@@ -71,13 +76,13 @@ class ProductDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = item2
         navigationBar.prefersLargeTitles = false
     }
-    
+
     @objc func backToCatalog() {
         navigationController?.popViewController(animated: true)
     }
 
     @objc func goToBusket() {
-        
+
     }
     
     private func setupLayout() {

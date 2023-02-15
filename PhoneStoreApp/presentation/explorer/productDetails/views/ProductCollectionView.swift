@@ -9,7 +9,7 @@ import UIKit
 
 class ProductCollectionView: UICollectionView {
     
-    var model: [ProductDetailItems] = [] {
+    var model: [ProductDetails] = [] {
         didSet {
             reloadData()
         }
@@ -29,13 +29,13 @@ class ProductCollectionView: UICollectionView {
 
 extension ProductCollectionView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        print("PRODUCT DETAILS: ------ \(model.count)")
+        return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ProductCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-//        cell.render(prodDItem: model[indexPath.row])
-        cell.layer.cornerRadius = 10
+        cell.render(prodDItem: model[indexPath.row])
         return cell
     }
     

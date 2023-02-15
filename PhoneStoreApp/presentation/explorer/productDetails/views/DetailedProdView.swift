@@ -13,6 +13,7 @@ class DetailedProdView: UIView {
     private var fiveStars = [UIImage]()
     private var images: [UIImageView] = [UIImageView(image: UIImage(named: "ic-chip")), UIImageView(image: UIImage(named: "ic-camera")), UIImageView(image: UIImage(named: "ic-memory")), UIImageView(image: UIImage(named: "ic-hardDisk"))]
     private var imageNames: [String] = ["Exynos 990", "108 + 12 mp", "8 GB", "256 GB"]
+    private var prodDetails: [ProductDetails] = []
     private var isHighlighted: Bool = false
     
     private lazy var brandLabel: UILabel = .create {
@@ -251,8 +252,7 @@ class DetailedProdView: UIView {
             equal(\.leadingAnchor, constant: 45),
             equal(\.trailingAnchor, constant: -60)
         ], singleConstraints: [
-            equal(\.heightAnchor, constant: 28),
-            equal(\.widthAnchor, constant: 28)
+            equal(\.heightAnchor, constant: 28)
         ])
 
         addSubview(imageLabelDetailStack, constraints: [

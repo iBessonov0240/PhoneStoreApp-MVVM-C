@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ProductCollectionViewCell: UICollectionViewCell {
     
-    private var productDetailItem: ProductDetailItems? = nil
+    private var productDetailItem: ProductDetails? = nil
     
     private lazy var backgroundImageView: UIImageView = .create {
         $0.image = UIImage(named: "phone")
@@ -39,7 +40,9 @@ class ProductCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    func render(prodDItem: ProductDetailItems) {
-        backgroundImageView.image = prodDItem.image
+    func render(prodDItem: ProductDetails) {
+        if let url = URL(string: (prodDItem.images.first!)) {
+            backgroundImageView.af.setImage(withURL: url)
+        }
     }
 }

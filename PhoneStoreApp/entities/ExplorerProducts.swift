@@ -7,28 +7,6 @@
 
 import Foundation
 
-//class ExplorerProducts: Codable {
-//    let id: Int64
-//    let title: String
-//    let subtitle: String
-//    let picture: String
-//    let isBuy: Bool?
-//    let priceWithoutDiscount: Int?
-//    let discountPrice: Int?
-//    var isFavorites: Bool? = false
-//
-//    init(id: Int, title: String, subtitle: String, picture: String, isBuy: Bool? = nil, priceWithoutDiscount: Int? = nil, discountPrice: Int? = nil, isFavorites: Bool? = nil) {
-//        self.id = Int64(id)
-//        self.title = title
-//        self.subtitle = subtitle
-//        self.picture = picture
-//        self.isBuy = isBuy
-//        self.priceWithoutDiscount = priceWithoutDiscount
-//        self.discountPrice = discountPrice
-//        self.isFavorites = isFavorites
-//    }
-//}
-
 struct ExplorerProducts: Codable {
     var homeStore: [HomeStoreProduct]
     var bestSeller: [BestSellerProduct]

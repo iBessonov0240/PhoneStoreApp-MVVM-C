@@ -512,9 +512,9 @@
 			children = (
 				FA6A49DA295F1D13009F3D0B /* views */,
 				FA6A49D8295F03C6009F3D0B /* ProductDetailsViewController.swift */,
-				FA6A49EC296C1B08009F3D0B /* ProductDetailsCoordinator.swift */,
 				FA6A49EE296C1D17009F3D0B /* ProductDetailsRoutingDelegate.swift */,
 				FA6A49F0296C1D56009F3D0B /* ProductDetailsViewModel.swift */,
+				FA6A49EC296C1B08009F3D0B /* ProductDetailsCoordinator.swift */,
 			);
 			path = productDetails;
 			sourceTree = "<group>";

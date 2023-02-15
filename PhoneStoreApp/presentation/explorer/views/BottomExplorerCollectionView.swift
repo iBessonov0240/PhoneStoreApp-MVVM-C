@@ -45,6 +45,7 @@ extension BottomExplorerCollectionView: UICollectionViewDelegate, UICollectionVi
         
         delegateRoute?.routeToDetails()
         print("routing delegate:____ \(indexPath.row)")
+        
     }
     
 }
