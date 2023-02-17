@@ -40,6 +40,8 @@ extension ProductCollectionView: UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.size.width, height: self.frame.size.height)
+        
+        return CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height - 20)
     }
+    
 }

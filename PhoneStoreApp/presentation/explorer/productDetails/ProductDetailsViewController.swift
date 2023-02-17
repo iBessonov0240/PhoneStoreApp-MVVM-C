@@ -21,7 +21,9 @@ class ProductDetailsViewController: UIViewController {
     private lazy var productCollectionView: ProductCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 1)
+//        layout.itemSize = CGSize(width: 393, height: 300)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+//        layout.estimatedItemSize = CGSize(width: 393, height: 300)
         let phonesCV = ProductCollectionView(frame: .zero, layout: layout)
         phonesCV.register(ProductCollectionViewCell.self)
         phonesCV.model = modelArray
@@ -40,13 +42,20 @@ class ProductDetailsViewController: UIViewController {
         title = "Product Details"
         setupNavigationBar()
         setupLayout()
+        detailsLoader()
     }
     
     private func detailsLoader() {
-        viewModel?.makeAPIRequest { productDetails in
-                    // handle the received productDetails
+        viewModel?.makeAPIRequest { result in
+                switch result {
+                case .success(let productDetails):
+                    self.modelArray = [productDetails]
+//                    self.detailedProdView = [productDetails.]
                     print(productDetails)
+                case .failure(let error):
+                    print(error)
                 }
+            }
     }
     
     private func setupNavigationBar() {
@@ -88,11 +97,12 @@ class ProductDetailsViewController: UIViewController {
     private func setupLayout() {
         
         view.addSubview(productCollectionView, constraints: [
-            equal(\.topAnchor, constant: 20),
+            equal(\.safeAreaLayoutGuide.topAnchor),
             equal(\.leadingAnchor),
             equal(\.trailingAnchor)
         ], singleConstraints: [
-            equal(\.heightAnchor, constant: 349)
+            equal(\.heightAnchor, constant: 300),
+            equal(\.widthAnchor)
         ])
 
         view.addSubview(detailedProdView, constraints: [

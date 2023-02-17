@@ -82,14 +82,10 @@
 		FA6A4A04296DBB0F009F3D0B /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */; };
 		FA6A4A07296ED915009F3D0B /* ProductDetailItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */; };
 		FA8781F32976DD3E009131BA /* CountPhonesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8781F22976DD3E009131BA /* CountPhonesView.swift */; };
-		FAA40F81298E51D10028C269 /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */; };
-		FAA40F82298E51D10028C269 /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */; };
-		FAA40F83298E51D10028C269 /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */; };
-		FAA40F84298E51D10028C269 /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */; };
-		FAA40F8A298E52890028C269 /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */; };
-		FAA40F8B298E52890028C269 /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */; };
-		FAA40F8C298E52890028C269 /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */; };
-		FAA40F8D298E52890028C269 /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */; };
+		FAA17348299E5ED200022243 /* Mark Pro-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA17344299E5ED200022243 /* Mark Pro-Medium.ttf */; };
+		FAA17349299E5ED200022243 /* Mark Pro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA17345299E5ED200022243 /* Mark Pro-Bold.ttf */; };
+		FAA1734A299E5ED200022243 /* Mark Pro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA17346299E5ED200022243 /* Mark Pro-Regular.ttf */; };
+		FAA1734B299E5ED200022243 /* Mark Pro-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAA17347299E5ED200022243 /* Mark Pro-Heavy.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,14 +191,10 @@
 		FA6A4A03296DBB0F009F3D0B /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		FA6A4A06296ED915009F3D0B /* ProductDetailItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailItems.swift; sourceTree = "<group>"; };
 		FA8781F22976DD3E009131BA /* CountPhonesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountPhonesView.swift; sourceTree = "<group>"; };
-		FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
-		FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
-		FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
-		FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
-		FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
-		FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
-		FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
-		FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
+		FAA17344299E5ED200022243 /* Mark Pro-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Medium.ttf"; sourceTree = "<group>"; };
+		FAA17345299E5ED200022243 /* Mark Pro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Bold.ttf"; sourceTree = "<group>"; };
+		FAA17346299E5ED200022243 /* Mark Pro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Regular.ttf"; sourceTree = "<group>"; };
+		FAA17347299E5ED200022243 /* Mark Pro-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Pro-Heavy.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,7 +296,7 @@
 				FA6A48F729473A98009F3D0B /* LaunchScreen.storyboard */,
 				FA6A48FA29473A98009F3D0B /* Info.plist */,
 				FA6A48F229473A97009F3D0B /* PhoneStoreApp.xcdatamodeld */,
-				FAA40F7C298E51D10028C269 /* MarkPro */,
+				FAA17343299E5ED200022243 /* MarkPro */,
 			);
 			path = PhoneStoreApp;
 			sourceTree = "<group>";
@@ -549,29 +541,16 @@
 			path = items;
 			sourceTree = "<group>";
 		};
-		FAA40F7C298E51D10028C269 /* MarkPro */ = {
+		FAA17343299E5ED200022243 /* MarkPro */ = {
 			isa = PBXGroup;
 			children = (
-				FAA40F85298E52890028C269 /* MarkPro */,
-				FAA40F7D298E51D10028C269 /* Mark Pro-Medium.ttf */,
-				FAA40F7E298E51D10028C269 /* Mark Pro-Bold.ttf */,
-				FAA40F7F298E51D10028C269 /* Mark Pro-Regular.ttf */,
-				FAA40F80298E51D10028C269 /* Mark Pro-Heavy.ttf */,
+				FAA17344299E5ED200022243 /* Mark Pro-Medium.ttf */,
+				FAA17345299E5ED200022243 /* Mark Pro-Bold.ttf */,
+				FAA17346299E5ED200022243 /* Mark Pro-Regular.ttf */,
+				FAA17347299E5ED200022243 /* Mark Pro-Heavy.ttf */,
 			);
-			name = MarkPro;
-			path = ../../MarkPro;
-			sourceTree = "<group>";
-		};
-		FAA40F85298E52890028C269 /* MarkPro */ = {
-			isa = PBXGroup;
-			children = (
-				FAA40F86298E52890028C269 /* Mark Pro-Medium.ttf */,
-				FAA40F87298E52890028C269 /* Mark Pro-Bold.ttf */,
-				FAA40F88298E52890028C269 /* Mark Pro-Regular.ttf */,
-				FAA40F89298E52890028C269 /* Mark Pro-Heavy.ttf */,
-			);
-			name = MarkPro;
-			sourceTree = "<group>";
+			path = MarkPro;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -683,16 +662,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA6A48F929473A98009F3D0B /* LaunchScreen.storyboard in Resources */,
-				FAA40F8C298E52890028C269 /* Mark Pro-Regular.ttf in Resources */,
-				FAA40F8A298E52890028C269 /* Mark Pro-Medium.ttf in Resources */,
-				FAA40F8B298E52890028C269 /* Mark Pro-Bold.ttf in Resources */,
-				FAA40F83298E51D10028C269 /* Mark Pro-Regular.ttf in Resources */,
-				FAA40F81298E51D10028C269 /* Mark Pro-Medium.ttf in Resources */,
-				FAA40F82298E51D10028C269 /* Mark Pro-Bold.ttf in Resources */,
+				FAA17348299E5ED200022243 /* Mark Pro-Medium.ttf in Resources */,
+				FAA1734A299E5ED200022243 /* Mark Pro-Regular.ttf in Resources */,
 				FA6A48F629473A98009F3D0B /* Assets.xcassets in Resources */,
-				FAA40F8D298E52890028C269 /* Mark Pro-Heavy.ttf in Resources */,
+				FAA1734B299E5ED200022243 /* Mark Pro-Heavy.ttf in Resources */,
 				FA6A48F129473A97009F3D0B /* Main.storyboard in Resources */,
-				FAA40F84298E51D10028C269 /* Mark Pro-Heavy.ttf in Resources */,
+				FAA17349299E5ED200022243 /* Mark Pro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

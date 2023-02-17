@@ -79,7 +79,7 @@ class DetailedProdView: UIView {
         $0.backgroundColor = Theme.appDarkBlueColor
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 20
-        $0.setImage(UIImage(named: ""), for: .normal)
+//        $0.setImage(UIImage(named: ""), for: .normal)
 //        $0.addTarget(nil, action: #selector(darkBlueBTap), for: .touchUpInside)
         $0.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
     }

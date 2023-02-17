@@ -13,7 +13,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private var productDetailItem: ProductDetails? = nil
     
     private lazy var backgroundImageView: UIImageView = .create {
-        $0.image = UIImage(named: "phone")
+//        $0.image = UIImage(named: "phone")
         $0.backgroundColor = Theme.appBackgroundColor
         $0.contentMode = .scaleAspectFit
         $0.clipsToBounds = true
